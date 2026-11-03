@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net.Http.Headers;
 using System.Security.Cryptography;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Conquest_of_the_Crimson_Towers
@@ -32,7 +33,22 @@ namespace Conquest_of_the_Crimson_Towers
             else
                 Environment.Exit(0);
 
+            int hp = 100;
+            int wr = 400;
 
+            Console.Write("                                   Enter the name of your character: ");
+            string name = Console.ReadLine();
+
+            Console.Clear();
+
+            string intro = $"{name} is a great warrior and a knight of Lord Hypnos himself, one day after a large and long lasting battle with a legion of Orcs, he came out alone but victorious, he ventured into the Forest of the Mist to find his way home";
+            string[] introsplit = intro.Split(' ');
+            foreach (var i in introsplit)
+            {
+                Console.Write(i + " ");
+                Thread.Sleep(wr);
+
+            }
             Console.ReadKey();
 
 
